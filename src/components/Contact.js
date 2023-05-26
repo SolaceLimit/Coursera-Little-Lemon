@@ -13,6 +13,9 @@ const ContactPage = () => {
     </Helmet>
     <main>
       <h1>ContactPage</h1>
+      <p>email</p>
+      <p>phone</p>
+      <p>address</p>
     </main>
 </>
   );

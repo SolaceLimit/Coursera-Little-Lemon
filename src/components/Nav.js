@@ -12,7 +12,7 @@ const Nav = () => {
         <Flex>  
           <Box w='100' h='10' bg='white'><Link to="/" className="nav-item">Home</Link></Box>
           <Box w='100' h='10' bg='white'><Link to="/reservation" className="nav-item">Reservation</Link></Box>
-          <Box w='100' h='10' bg='white'><Link to="/contact" className="nav-item">Contact US</Link></Box>
+          <Box w='100' h='10' bg='white'><Link to="/contact" className="nav-item">Contact</Link></Box>
         </Flex>
     </nav>
     <Routes> 
