@@ -3,18 +3,44 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./Home";
 import ContactPage from "./Contact";
 import ReservationPage from "./Reservation";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
-import { AppstoreOutlined } from "@ant-design/icons";
+import UnderContructionPage from "./UnderContruction";
+import { Menu } from "antd";
+import * as Icons from "@ant-design/icons";
+
+const routeUrls = {
+	home: "/",
+	reservation: "/reservation",
+	contact: "/contact",
+	underContruction: "/UnderContruction",
+};
 
 const items = [
 	{
 		label: (
-			<Link to='/' className='nav-item'>
+			<Link to={routeUrls.home} className='nav-item'>
 				Home
 			</Link>
 		),
-		key: "alipay",
-		icon: <AppstoreOutlined />,
+		key: "Home",
+		icon: <Icons.HomeOutlined />,
+	},
+	{
+		label: (
+			<Link to={routeUrls.underContruction} className='nav-item'>
+				About
+			</Link>
+		),
+		key: "About",
+		icon: <Icons.QuestionOutlined />,
+	},
+	{
+		label: (
+			<Link to={routeUrls.underContruction} className='nav-item'>
+				Menu
+			</Link>
+		),
+		key: "Menu",
+		icon: <Icons.MenuOutlined />,
 	},
 	{
 		label: (
@@ -22,8 +48,26 @@ const items = [
 				Reservation
 			</Link>
 		),
-		key: "alipay",
-		icon: <AppstoreOutlined />,
+		key: "Reservation",
+		icon: <Icons.CalendarOutlined />,
+	},
+	{
+		label: (
+			<Link to={routeUrls.underContruction} className='nav-item'>
+				Online Order
+			</Link>
+		),
+		key: "Online-Order",
+		icon: <Icons.DollarOutlined />,
+	},
+	{
+		label: (
+			<Link to={routeUrls.underContruction} className='nav-item'>
+				Login
+			</Link>
+		),
+		key: "Login",
+		icon: <Icons.LoginOutlined />,
 	},
 	{
 		label: (
@@ -31,8 +75,8 @@ const items = [
 				Contact
 			</Link>
 		),
-		key: "alipay",
-		icon: <AppstoreOutlined />,
+		key: "Contact",
+		icon: <Icons.ContactsOutlined />,
 	},
 ];
 
@@ -40,17 +84,20 @@ const Nav = () => {
 	return (
 		<>
 			<nav>
-				<Menu
-					theme='dark'
-					mode='horizontal'
-					defaultSelectedKeys={["2"]}
-					items={items}
-				/>
+				<Menu mode='horizontal' inlineCollapsed='true' items={items} />
 			</nav>
+
 			<Routes>
-				<Route path='/' element={<HomePage />}></Route>
-				<Route path='/reservation' element={<ReservationPage />}></Route>
-				<Route path='/contact' element={<ContactPage />}></Route>
+				<Route path={routeUrls.home} element={<HomePage />}></Route>
+				<Route
+					path={routeUrls.reservation}
+					element={<ReservationPage />}
+				></Route>
+				<Route path={routeUrls.contact} element={<ContactPage />}></Route>
+				<Route
+					path={routeUrls.underContruction}
+					element={<UnderContructionPage />}
+				></Route>
 			</Routes>
 		</>
 	);
