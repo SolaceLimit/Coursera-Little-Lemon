@@ -1,18 +1,8 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import HomePage from "./Home";
-import ContactPage from "./Contact";
-import ReservationPage from "./Reservation";
-import UnderContructionPage from "./UnderContruction";
+import { Link } from "react-router-dom";
 import { Menu } from "antd";
 import * as Icons from "@ant-design/icons";
-
-const routeUrls = {
-	home: "/",
-	reservation: "/reservation",
-	contact: "/contact",
-	underContruction: "/UnderContruction",
-};
+import routeUrls from "./routes";
 
 const items = [
 	{
@@ -82,24 +72,9 @@ const items = [
 
 const Nav = () => {
 	return (
-		<>
-			<nav>
-				<Menu mode='horizontal' items={items} />
-			</nav>
-
-			<Routes>
-				<Route path={routeUrls.home} element={<HomePage />}></Route>
-				<Route
-					path={routeUrls.reservation}
-					element={<ReservationPage />}
-				></Route>
-				<Route path={routeUrls.contact} element={<ContactPage />}></Route>
-				<Route
-					path={routeUrls.underContruction}
-					element={<UnderContructionPage />}
-				></Route>
-			</Routes>
-		</>
+		<nav>
+			<Menu theme='dark' mode='horizontal' items={items} />
+		</nav>
 	);
 };
 export default Nav;

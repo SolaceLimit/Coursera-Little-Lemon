@@ -1,22 +1,13 @@
 import React from "react";
-import {Box, Flex} from "@chakra-ui/react";
+import { Layout } from "antd";
 
 const Footer = () => {
-  return (
-    <Box>
-    <footer>
-      <Flex
-        margin="0 auto"
-        px={12}
-        justifyContent="center"
-        alignItems="center"
-        maxWidth="1024px"
-        height={16}
-      >
-        <p>Coursera - Little Lemon • © 2022</p>
-      </Flex>
-    </footer>
-  </Box>
-  );
+	return (
+		<footer>
+			<Layout.Footer style={{ textAlign: "center" }}>
+				Little Lemon ©2023
+			</Layout.Footer>
+		</footer>
+	);
 };
 export default Footer;
