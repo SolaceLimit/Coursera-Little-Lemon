@@ -1,5 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import Card from "../components/Card.js";
+import { Col, Row } from "antd";
 
 const HomePage = () => {
 	return (
@@ -32,32 +34,30 @@ const HomePage = () => {
 					Aenean sollicitudin tortor at tortor cursus, eget gravida mauris
 					ultrices. Integer finibus enim turpis, eget fringilla odio aliquet ut.
 				</p>
-				<p>
-					Cras ultrices odio eget bibendum porta. Nullam id nisl a nulla mattis
-					luctus. Vivamus lacinia felis nec nisl ultrices rutrum. Nulla
-					consequat maximus fringilla. Quisque finibus nisl eget rhoncus cursus.
-					Maecenas hendrerit suscipit tincidunt. Maecenas mollis eu eros
-					malesuada varius. Cras mattis malesuada sodales. Integer eget leo sed
-					ligula dapibus egestas. Nullam libero nisi, sodales at sem in, posuere
-					hendrerit diam. Praesent maximus eget metus et gravida. Praesent
-					tincidunt arcu diam, vitae vestibulum tortor dignissim ac. Curabitur
-					vulputate in mi dignissim egestas. Nullam at nisi magna. Suspendisse
-					condimentum dictum orci, eu volutpat justo volutpat nec.
-				</p>
-				<p>
-					Quisque euismod, massa in elementum tempus, odio dolor rutrum sapien,
-					id ornare dui odio varius risus. Cras eget efficitur enim. Morbi nibh
-					justo, sollicitudin et sapien ut, sodales laoreet dolor. Vivamus id
-					rhoncus velit. Curabitur ac ligula a nunc dictum aliquam eu eget erat.
-					Nulla facilisi. Integer in accumsan nisi, eu euismod nunc. Praesent
-					mattis, ante in facilisis lacinia, neque mi fringilla orci, dictum
-					dapibus arcu est a nulla. Nulla dolor libero, tincidunt a sapien at,
-					semper facilisis tortor. Integer erat ante, ornare ac leo ut, rutrum
-					laoreet tellus. Duis ac nibh a enim vestibulum scelerisque. Nam id
-					dictum metus. Ut tincidunt accumsan sodales. Donec lacinia maximus
-					eros id egestas. Etiam et tellus egestas, condimentum felis ac, mattis
-					arcu.
-				</p>
+
+				<Row>
+					<Col span={8}>
+						<Card
+							title='Cucumber Soup'
+							description='This cool, refreshing cucumber soup from Andrew Zimmern gets tang and creaminess from Greek yogurt and big, summery flavor from lots of fresh herbs.'
+							src='https://www.foodandwine.com/thmb/HEyCim1Ub0WKjSpop9l5UlK66HA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/FAW-cold-cucumber-soup-yogurt-and-dill-hero-02-19e5f8e4943f478f813c26a977e40a14.jpg'
+						></Card>
+					</Col>
+					<Col span={8}>
+						<Card
+							title='Cheeseburger'
+							description='This cool, refreshing cucumber soup from Andrew Zimmern gets tang and creaminess from Greek yogurt and big, summery flavor from lots of fresh herbs.'
+							src='https://www.recipetineats.com/wp-content/uploads/2022/08/Double-cheeseburgers_0.jpg?resize=650,813'
+						></Card>
+					</Col>
+					<Col span={8}>
+						<Card
+							title='Lemonade'
+							description='This cool, refreshing cucumber soup from Andrew Zimmern gets tang and creaminess from Greek yogurt and big, summery flavor from lots of fresh herbs.'
+							src='https://www.recipetineats.com/wp-content/uploads/2022/08/Double-cheeseburgers_0.jpg?resize=650,813'
+						></Card>
+					</Col>
+				</Row>
 			</main>
 		</>
 	);

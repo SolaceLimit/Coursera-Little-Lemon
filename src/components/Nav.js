@@ -84,7 +84,7 @@ const Nav = () => {
 	return (
 		<>
 			<nav>
-				<Menu mode='horizontal' inlineCollapsed='true' items={items} />
+				<Menu mode='horizontal' items={items} />
 			</nav>
 
 			<Routes>
