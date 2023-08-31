@@ -16,7 +16,7 @@ const items = [
 	},
 	{
 		label: (
-			<Link to={routeUrls.underContruction} className='nav-item'>
+			<Link to={routeUrls.about} className='nav-item'>
 				About
 			</Link>
 		),
@@ -25,7 +25,7 @@ const items = [
 	},
 	{
 		label: (
-			<Link to={routeUrls.underContruction} className='nav-item'>
+			<Link to={routeUrls.menu} className='nav-item'>
 				Menu
 			</Link>
 		),
@@ -73,7 +73,7 @@ const items = [
 const Nav = () => {
 	return (
 		<nav>
-			<Menu theme='dark' mode='horizontal' items={items} />
+			<Menu theme='light' mode='horizontal' items={items} />
 		</nav>
 	);
 };

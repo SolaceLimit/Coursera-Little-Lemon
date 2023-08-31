@@ -2,11 +2,17 @@ import "./App.css";
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Layout } from "antd";
 
 function App() {
 	return (
-		<Layout style={{}}>
+		<Layout
+			style={{
+				backgroundColor: "white",
+				maxWidth: 1200,
+				margin: "auto",
+			}}
+		>
 			<Header />
 			<Content />
 			<Footer />

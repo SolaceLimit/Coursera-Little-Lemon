@@ -22,7 +22,7 @@ const Card = (props) => {
 			}
 		>
 			<Meta
-				title={props.title || "title"}
+				title={props.title || "title price(x.xx)"}
 				description={props.description || "description"}
 			/>
 		</CardInterface>
