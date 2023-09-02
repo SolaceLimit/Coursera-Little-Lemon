@@ -5,6 +5,7 @@ import HomePage from "./Home";
 import ContactPage from "./Contact";
 import MenuPage from "./Menu";
 import AboutPage from "./About";
+import ReservationPage from "./Reservation.tsx";
 import UnderContructionPage from "./UnderContruction";
 import routeUrls from "./routes";
 
@@ -17,7 +18,7 @@ const Content = () => {
 				<Route path={routeUrls.about} element={<AboutPage />}></Route>
 				<Route
 					path={routeUrls.reservation}
-					element={<UnderContructionPage />}
+					element={<ReservationPage />}
 				></Route>
 				<Route path={routeUrls.contact} element={<ContactPage />}></Route>
 				<Route
