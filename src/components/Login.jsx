@@ -1,36 +1,32 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import routeUrls from "./routes";
 import { Button, Form, Input, Alert, Space } from "antd";
 
-const SignUp = () => {
+const Login = () => {
+	const navigate = useNavigate();
 	const [form] = Form.useForm();
 
-	const { signup } = useAuth();
+	const { login } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
 
 	async function onFinish() {
-		if (
-			form.getFieldValue("password") !== form.getFieldValue("passwordConfirm")
-		) {
-			return setError("Passwords do not match");
-		}
-
 		try {
 			setError("");
 			setLoading(true);
-			await signup(form.getFieldValue("email"), form.getFieldValue("password"));
-			form.resetFields();
+			await login(form.getFieldValue("email"), form.getFieldValue("password"));
+			navigate(routeUrls.dashboard);
 		} catch (e) {
-			setError("Failed to Sign Up User");
+			setError("Failed to log in");
 		}
 		setLoading(false);
 	}
 
 	return (
 		<>
-			{error && <Alert type='error'>{error}</Alert>}
+			{error && <Alert type='error' closable={true} message={error} />}
 			<Form
 				form={form}
 				name='form_reservation'
@@ -59,15 +55,6 @@ const SignUp = () => {
 				>
 					<Input.Password />
 				</Form.Item>
-
-				<Form.Item
-					label='Confirm Password'
-					name='passwordConfirm'
-					hasFeedback
-					rules={[{ required: true, message: "Required" }]}
-				>
-					<Input.Password />
-				</Form.Item>
 				<Form.Item
 					wrapperCol={{
 						span: 12,
@@ -76,15 +63,15 @@ const SignUp = () => {
 				>
 					<Space>
 						<Button type='primary' htmlType='submit' disabled={loading}>
-							Sign Up
+							Login
 						</Button>
 						<Button htmlType='reset'>reset</Button>
 					</Space>
 				</Form.Item>
 			</Form>
-			Already have an account? <Link to='/login'>Log In</Link>
+			Need an account? <Link to={routeUrls.signUp}>Sign Up</Link>
 		</>
 	);
 };
 
-export default SignUp;
+export default Login;

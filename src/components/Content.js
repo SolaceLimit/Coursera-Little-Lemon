@@ -6,9 +6,11 @@ import ContactPage from "./Contact";
 import MenuPage from "./Menu";
 import AboutPage from "./About";
 import SignUp from "./SignUp";
+import Dashboard from "./Dashboard";
 import ReservationPage from "./Reservation.tsx";
 import UnderContructionPage from "./UnderContruction";
 import routeUrls from "./routes";
+import Login from "./Login";
 
 const Content = () => {
 	return (
@@ -22,8 +24,12 @@ const Content = () => {
 					element={<ReservationPage />}
 				></Route>
 				<Route path={routeUrls.signUp} element={<SignUp />}></Route>
-				<Route path={routeUrls.signUp} element={<SignUp />}></Route>
-				<Route path={routeUrls.signUp} element={<SignUp />}></Route>
+				<Route path={routeUrls.login} element={<Login />}></Route>
+				<Route path={routeUrls.dashboard} element={<Dashboard />}></Route>
+				<Route
+					path={routeUrls.forgotPassword}
+					element={<forgotPassword />}
+				></Route>
 				<Route path={routeUrls.contact} element={<ContactPage />}></Route>
 				<Route
 					path={routeUrls.underContruction}

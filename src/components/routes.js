@@ -4,9 +4,11 @@ const routeUrls = {
 	contact: "/contact",
 	order: "/order",
 	about: "/about",
-	login: "/login",
 	menu: "/menu",
 	signUp: "/signUp",
+	login: "/login",
+	dashboard: "/dashboard",
+	forgotPassword: "/forgotPassword",
 	underContruction: "/UnderContruction",
 };
 

@@ -30,7 +30,7 @@ const items = [
 			</Link>
 		),
 		key: "Menu",
-		icon: <Icons.MenuOutlined />,
+		icon: <Icons.ShopOutlined />,
 	},
 	{
 		label: (
@@ -52,7 +52,7 @@ const items = [
 	},
 	{
 		label: (
-			<Link to={routeUrls.signUp} className='nav-item'>
+			<Link to={routeUrls.login} className='nav-item'>
 				Login
 			</Link>
 		),
@@ -61,7 +61,7 @@ const items = [
 	},
 	{
 		label: (
-			<Link to='/contact' className='nav-item'>
+			<Link to={routeUrls.contact} className='nav-item'>
 				Contact
 			</Link>
 		),
