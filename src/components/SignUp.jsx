@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import routeUrls from "./routes";
 import { Button, Form, Input, Alert, Space } from "antd";
 
 const SignUp = () => {
@@ -9,6 +10,7 @@ const SignUp = () => {
 	const { signup } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate();
 
 	async function onFinish() {
 		if (
@@ -21,7 +23,7 @@ const SignUp = () => {
 			setError("");
 			setLoading(true);
 			await signup(form.getFieldValue("email"), form.getFieldValue("password"));
-			form.resetFields();
+			navigate(routeUrls.login);
 		} catch (e) {
 			setError("Failed to Sign Up User");
 		}
