@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "antd";
 import * as Icons from "@ant-design/icons";
-import routeUrls from "./routes";
+import routeUrls from "./Routes";
 
 const items = [
 	{
@@ -52,7 +52,7 @@ const items = [
 	},
 	{
 		label: (
-			<Link to={routeUrls.underContruction} className='nav-item'>
+			<Link to={routeUrls.signUp} className='nav-item'>
 				Login
 			</Link>
 		),

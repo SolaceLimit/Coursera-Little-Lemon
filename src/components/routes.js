@@ -6,6 +6,7 @@ const routeUrls = {
 	about: "/about",
 	login: "/login",
 	menu: "/menu",
+	signUp: "/signUp",
 	underContruction: "/UnderContruction",
 };
 

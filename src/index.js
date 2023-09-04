@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 import { HelmetProvider } from "react-helmet-async";
-import { AlertProvider } from "./context/alertContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const helmetContext = {};
@@ -13,9 +13,9 @@ root.render(
 	<React.StrictMode>
 		<HelmetProvider context={helmetContext}>
 			<BrowserRouter>
-				<AlertProvider>
+				<AuthProvider>
 					<App />
-				</AlertProvider>
+				</AuthProvider>
 			</BrowserRouter>
 		</HelmetProvider>
 	</React.StrictMode>

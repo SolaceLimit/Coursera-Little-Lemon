@@ -5,9 +5,10 @@ import HomePage from "./Home";
 import ContactPage from "./Contact";
 import MenuPage from "./Menu";
 import AboutPage from "./About";
+import SignUp from "./SignUp";
 import ReservationPage from "./Reservation.tsx";
 import UnderContructionPage from "./UnderContruction";
-import routeUrls from "./routes";
+import routeUrls from "./Routes";
 
 const Content = () => {
 	return (
@@ -20,6 +21,9 @@ const Content = () => {
 					path={routeUrls.reservation}
 					element={<ReservationPage />}
 				></Route>
+				<Route path={routeUrls.signUp} element={<SignUp />}></Route>
+				<Route path={routeUrls.signUp} element={<SignUp />}></Route>
+				<Route path={routeUrls.signUp} element={<SignUp />}></Route>
 				<Route path={routeUrls.contact} element={<ContactPage />}></Route>
 				<Route
 					path={routeUrls.underContruction}
