@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Form, Input, message, Space } from "antd";
 
 const SignUp = () => {
@@ -10,7 +10,6 @@ const SignUp = () => {
 	const { signup, currentUser } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
-	const history = useNavigate();
 
 	async function onFinish() {
 		if (
@@ -24,7 +23,6 @@ const SignUp = () => {
 			setLoading(true);
 			await signup(form.getFieldValue("email"), form.getFieldValue("password"));
 			form.resetFields();
-			//history.push("/"); route to dashboard
 		} catch (e) {
 			messageApi.open({
 				type: "error",
