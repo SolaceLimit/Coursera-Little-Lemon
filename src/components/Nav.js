@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "antd";
 import * as Icons from "@ant-design/icons";
-import routeUrls from "./Routes";
+import routeUrls from "./routes";
 
 const items = [
 	{

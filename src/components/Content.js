@@ -8,7 +8,7 @@ import AboutPage from "./About";
 import SignUp from "./SignUp";
 import ReservationPage from "./Reservation.tsx";
 import UnderContructionPage from "./UnderContruction";
-import routeUrls from "./Routes";
+import routeUrls from "./routes";
 
 const Content = () => {
 	return (
