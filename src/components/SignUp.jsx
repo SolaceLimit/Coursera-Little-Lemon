@@ -23,8 +23,10 @@ const SignUp = () => {
 			setError("");
 			setLoading(true);
 			await signup(form.getFieldValue("email"), form.getFieldValue("password"));
-			history.push("/");
-		} catch {
+			form.resetFields();
+			//history.push("/"); route to dashboard
+		} catch (e) {
+			console.log(e);
 			messageApi.open({
 				type: "error",
 				content: "Failed to Sign Up User",
