@@ -26,7 +26,6 @@ const SignUp = () => {
 			form.resetFields();
 			//history.push("/"); route to dashboard
 		} catch (e) {
-			console.log(e);
 			messageApi.open({
 				type: "error",
 				content: "Failed to Sign Up User",
