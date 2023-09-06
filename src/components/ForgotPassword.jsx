@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Form, Input, Space, Alert } from "antd";
 
 const ForgotPassword = () => {
 	const [form] = Form.useForm();
-
 	const { resetPassword } = useAuth();
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
