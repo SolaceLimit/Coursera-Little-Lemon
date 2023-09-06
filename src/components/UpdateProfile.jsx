@@ -4,30 +4,43 @@ import { Link, useNavigate } from "react-router-dom";
 import routeUrls from "./routes";
 import { Button, Form, Input, Alert, Space } from "antd";
 
-const SignUp = () => {
+const UpdateProfile = () => {
+	const navigate = useNavigate();
 	const [form] = Form.useForm();
 
-	const { signup } = useAuth();
+	const { currentUser, updatePassword, updateEmail } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
-	const navigate = useNavigate();
 
-	async function onFinish() {
+	function onFinish() {
 		if (
 			form.getFieldValue("password") !== form.getFieldValue("passwordConfirm")
 		) {
 			return setError("Passwords do not match");
 		}
 
-		try {
-			setError("");
-			setLoading(true);
-			await signup(form.getFieldValue("email"), form.getFieldValue("password"));
-			navigate(routeUrls.login);
-		} catch (e) {
-			setError("Failed to Sign Up User");
+		const promises = [];
+		setLoading(true);
+		setError("");
+		console.log(currentUser);
+		if (form.getFieldValue("email") !== currentUser.email) {
+			promises.push(updateEmail(form.getFieldValue("email")));
 		}
-		setLoading(false);
+		if (form.getFieldValue("password")) {
+			promises.push(updatePassword(form.getFieldValue("password")));
+		}
+
+		Promise.all(promises)
+			.then(() => {
+				navigate(routeUrls.dashboard);
+			})
+			.catch((e) => {
+				console.log(e);
+				setError("Failed to update account");
+			})
+			.finally(() => {
+				setLoading(false);
+			});
 	}
 
 	return (
@@ -35,7 +48,7 @@ const SignUp = () => {
 			{error && <Alert type='error' closable={true} message={error} />}
 			<Form
 				form={form}
-				name='form_reservation'
+				name='form_update_profile'
 				labelCol={{ span: 6 }}
 				wrapperCol={{ span: 14 }}
 				layout='vertical'
@@ -46,6 +59,7 @@ const SignUp = () => {
 					hasFeedback
 					label='Email'
 					name='email'
+					initialValue={currentUser?.email}
 					rules={[
 						{ required: true, message: "Required" },
 						{ type: "email", message: "Invalid Email" },
@@ -53,22 +67,11 @@ const SignUp = () => {
 				>
 					<Input />
 				</Form.Item>
-				<Form.Item
-					label='Password'
-					name='password'
-					hasFeedback
-					rules={[{ required: true, message: "Required" }, { type: "" }]}
-				>
-					<Input.Password />
+				<Form.Item label='Password' name='password' hasFeedback>
+					<Input.Password placeholder='Leave blank to keep same password' />
 				</Form.Item>
-
-				<Form.Item
-					label='Confirm Password'
-					name='passwordConfirm'
-					hasFeedback
-					rules={[{ required: true, message: "Required" }]}
-				>
-					<Input.Password />
+				<Form.Item label='Confirm Password' name='passwordConfirm' hasFeedback>
+					<Input.Password placeholder='Leave blank to keep same password' />
 				</Form.Item>
 				<Form.Item
 					wrapperCol={{
@@ -78,15 +81,14 @@ const SignUp = () => {
 				>
 					<Space>
 						<Button type='primary' htmlType='submit' disabled={loading}>
-							Sign Up
+							Update Profile
 						</Button>
-						<Button htmlType='reset'>reset</Button>
 					</Space>
 				</Form.Item>
 			</Form>
-			Already have an account? <Link to='/login'>Log In</Link>
+			Remembered Password<Link to={routeUrls.login}>Log in</Link>
 		</>
 	);
 };
 
-export default SignUp;
+export default UpdateProfile;

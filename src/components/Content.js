@@ -7,6 +7,8 @@ import MenuPage from "./Menu";
 import AboutPage from "./About";
 import SignUp from "./SignUp";
 import Dashboard from "./Dashboard";
+import UpdateProfile from "./UpdateProfile";
+import ForgotPassword from "./ForgotPassword";
 import ReservationPage from "./Reservation.tsx";
 import UnderContructionPage from "./UnderContruction";
 import routeUrls from "./routes";
@@ -27,8 +29,12 @@ const Content = () => {
 				<Route path={routeUrls.login} element={<Login />}></Route>
 				<Route path={routeUrls.dashboard} element={<Dashboard />}></Route>
 				<Route
+					path={routeUrls.updateProfile}
+					element={<UpdateProfile />}
+				></Route>
+				<Route
 					path={routeUrls.forgotPassword}
-					element={<forgotPassword />}
+					element={<ForgotPassword />}
 				></Route>
 				<Route path={routeUrls.contact} element={<ContactPage />}></Route>
 				<Route

@@ -22,7 +22,6 @@ const Login = () => {
 			setError("Failed to log in");
 		}
 		setLoading(false);
-		navigate(routeUrls.dashboard);
 	}
 
 	return (
@@ -59,7 +58,7 @@ const Login = () => {
 				<Form.Item
 					wrapperCol={{
 						span: 12,
-						offset: 6,
+						offset: 8,
 					}}
 				>
 					<Space>
@@ -67,6 +66,7 @@ const Login = () => {
 							Login
 						</Button>
 						<Button htmlType='reset'>reset</Button>
+						<Link to={routeUrls.forgotPassword}>forgot password</Link>
 					</Space>
 				</Form.Item>
 			</Form>

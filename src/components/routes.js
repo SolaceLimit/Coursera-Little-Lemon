@@ -9,6 +9,7 @@ const routeUrls = {
 	login: "/login",
 	dashboard: "/dashboard",
 	forgotPassword: "/forgotPassword",
+	updateProfile: "/updateProfile",
 	underContruction: "/UnderContruction",
 };
 

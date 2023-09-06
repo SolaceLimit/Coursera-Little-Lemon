@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Input, Space, Alert } from "antd";
 
 const ForgotPassword = () => {
@@ -25,8 +25,8 @@ const ForgotPassword = () => {
 
 	return (
 		<>
-			{error && <Alert type='error'>{error}</Alert>}
-			{message && <Alert type='success'>{message}</Alert>}
+			{error && <Alert type='error' closable={true} message={error} />}
+			{message && <Alert type='success' closable={true} message={message} />}
 			<Form
 				form={form}
 				name='form_reservation'
@@ -60,8 +60,7 @@ const ForgotPassword = () => {
 					</Space>
 				</Form.Item>
 				<Space>
-					<Link to='/login'>Log In</Link>
-					Need an account? <Link to='/SignUp'>Sign Up</Link>
+					Remembered Passworrd <Link to='/login'>Log In</Link>
 				</Space>
 			</Form>
 		</>

@@ -32,7 +32,7 @@ const Dashboard = () => {
 					<Input readOnly={true} />
 				</Form.Item>
 			</Form>
-			<Link to='/update-profile'></Link>
+			<Link to={routeUrls.updateProfile}>Update Profile</Link>
 			<Button variant='link' onClick={handleLogout}>
 				Log Out
 			</Button>
