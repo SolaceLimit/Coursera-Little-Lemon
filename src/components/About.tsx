@@ -19,7 +19,6 @@ const AboutPage = () => {
 				<h1>about us</h1>
 				<Image
 					width={200}
-					align
 					src='https://www.48hourslogo.com/oss/works/2022/01/13/21255711641/115168_45900_fc8ca08f-43ca-45b0-9147-3c86b3eb880a.jpg'
 				/>
 				<p>

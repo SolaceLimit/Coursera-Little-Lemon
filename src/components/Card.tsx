@@ -3,10 +3,10 @@ import { Card as CardInterface } from "antd";
 
 const { Meta } = CardInterface;
 
-const Card = (props) => {
+const Card = (props: any) => {
 	return (
 		<CardInterface
-			hoverable='true'
+			hoverable={true}
 			style={{
 				width: props.width || 240,
 			}}

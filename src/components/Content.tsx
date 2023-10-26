@@ -9,7 +9,7 @@ import SignUp from "./SignUp";
 import Dashboard from "./Dashboard";
 import UpdateProfile from "./UpdateProfile";
 import ForgotPassword from "./ForgotPassword";
-import ReservationPage from "./Reservation.tsx";
+import ReservationPage from "./Reservation";
 import UnderContructionPage from "./UnderContruction";
 import routeUrls from "./routes";
 import Login from "./Login";

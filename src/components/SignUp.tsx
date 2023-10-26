@@ -57,7 +57,7 @@ const SignUp = () => {
 					label='Password'
 					name='password'
 					hasFeedback
-					rules={[{ required: true, message: "Required" }, { type: "" }]}
+					rules={[{ required: true, message: "Required" }]}
 				>
 					<Input.Password />
 				</Form.Item>

@@ -22,7 +22,7 @@ const Dashboard = () => {
 
 	return (
 		<>
-			{error && <Alert type='error'>{error}</Alert>}
+			{error && <Alert type='error' message={error} />}
 			<Form>
 				<Form.Item
 					label='Email'
@@ -33,7 +33,7 @@ const Dashboard = () => {
 				</Form.Item>
 			</Form>
 			<Link to={routeUrls.updateProfile}>Update Profile</Link>
-			<Button variant='link' onClick={handleLogout}>
+			<Button type='link' onClick={handleLogout}>
 				Log Out
 			</Button>
 		</>

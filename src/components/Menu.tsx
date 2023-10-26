@@ -1,41 +1,23 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import Card from "../components/Card.js";
+import Card from "./Card";
 import { Col, Row } from "antd";
 
-const HomePage = () => {
+const MenuPage = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Little Lemon</title>
-				<meta name='description' content='Home Page of little lemon' />
-				<meta name='og:description' content='Home Page of little lemon' />
-				<meta name='og:title' content='Home Page' />
+				<title>Little - Menu</title>
+				<meta name='description' content='Menu Page of little lemon' />
+				<meta name='og:description' content='Menu Page of little lemon' />
+				<meta name='og:title' content='Menu Page' />
 				<meta
 					name='og:image'
 					content='https://thenounproject.com/api/private/icons/526867/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkcKuVfldPJ0o9iMFFPUDZOXZIo_TOdGBS6Lmpt0TB2xmgkgzB9P2pC9ecq0QbZsCvZDV4FpKd5YHObXNId-E-i8Fnfg%3D%3D'
 				/>
 			</Helmet>
 			<main>
-				<h1>Little Lemon</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mattis
-					ullamcorper risus at consectetur. Sed cursus pharetra vulputate. Donec
-					rutrum porttitor diam a venenatis. Suspendisse odio tortor, tincidunt
-					sit amet vehicula in, molestie eget leo. Donec non velit varius,
-					maximus nunc non, placerat odio. Sed dapibus rhoncus purus, et
-					consequat lacus finibus sollicitudin. Pellentesque in eros finibus,
-					faucibus leo et, semper orci. Mauris convallis aliquet magna vitae
-					convallis. Ut et enim ultrices metus tempor suscipit. Aenean laoreet
-					sapien in justo condimentum, sed fringilla turpis pulvinar. Duis sem
-					neque, molestie quis finibus vel, euismod non purus. Sed vitae nunc
-					vel tellus volutpat consequat quis quis sem. Curabitur elementum ac
-					dolor ac vehicula. Nullam quis ipsum ut lectus vulputate tincidunt.
-					Aenean sollicitudin tortor at tortor cursus, eget gravida mauris
-					ultrices. Integer finibus enim turpis, eget fringilla odio aliquet ut.
-				</p>
-
-				<h3> SALES </h3>
+				<h1>Sales</h1>
 				<Row>
 					<Col xs={24} xl={6}>
 						<Card
@@ -66,8 +48,53 @@ const HomePage = () => {
 						></Card>
 					</Col>
 				</Row>
+				<h1>Burgers</h1>
+				<Row>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+				</Row>
+				<h1>Drinks</h1>
+				<Row>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+				</Row>
+				<h1>Special Items</h1>
+				<Row>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+					<Col xs={24} xl={6}>
+						<Card></Card>
+					</Col>
+				</Row>
 			</main>
 		</>
 	);
 };
-export default HomePage;
+export default MenuPage;

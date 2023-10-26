@@ -22,8 +22,7 @@ const UpdateProfile = () => {
 		const promises = [];
 		setLoading(true);
 		setError("");
-		console.log(currentUser);
-		if (form.getFieldValue("email") !== currentUser.email) {
+		if (form.getFieldValue("email") !== currentUser?.email) {
 			promises.push(updateEmail(form.getFieldValue("email")));
 		}
 		if (form.getFieldValue("password")) {
